@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">kursproj</string>
+    <string name="mainPicture">Picture in the main screen</string>
+    <string name="logoOfApp">Название</string>
+</resources>
