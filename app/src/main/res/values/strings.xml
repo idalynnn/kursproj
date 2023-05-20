@@ -2,6 +2,7 @@
     <string name="app_name">kursproj</string>
     <string name="mainPicture">Picture in the main screen</string>
     <string name="logoOfApp">OurNotes</string>
+    <string name="logoOfNote">Заметки</string>
     <string name="dailyMain">Daily button in the main screen</string>
     <string name="notesMain">Notes button in the main screen</string>
     <string name="gradientBottomMain">Notes button in the main screen</string>
