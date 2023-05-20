@@ -2,8 +2,9 @@
     <string name="app_name">kursproj</string>
     <string name="mainPicture">Picture in the main screen</string>
     <string name="logoOfApp">OurNotes</string>
+    <string name="dailyMain">Daily button in the main screen</string>
     <string name="notesMain">Notes button in the main screen</string>
-    <string name="gradientbottomMain">Notes button in the main screen</string>
+    <string name="gradientBottomMain">Notes button in the main screen</string>
     <string name="gradientTopMain">Notes button in the main screen</string>
-    <string name="recrangle">Rectangle on the top</string>
+    <string name="rectangle">Rectangle on the top</string>
 </resources>
