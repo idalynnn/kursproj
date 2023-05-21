@@ -11,7 +11,7 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/gradientbottomMain"
+        android:contentDescription="@string/gradientBottomMain"
         android:hapticFeedbackEnabled="false"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/recrangle"
+        android:contentDescription="@string/rectangle"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,23 +70,74 @@
         android:id="@+id/notesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:background="none"
+        android:layout_marginTop="96dp"
+        android:background="@null"
         android:contentDescription="@string/notesMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/notesbuttonmain" />
 
-    <ImageView
-        android:id="@+id/imageView5"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notesMain"
+
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="@+id/notesButton"
+            app:layout_constraintStart_toStartOf="@+id/notesButton"
+            app:layout_constraintTop_toTopOf="@+id/notesButton" />
+
+    <ImageButton
+        android:id="@+id/dailyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/dailyMain"
         android:layout_marginTop="40dp"
+        android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notesButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/dailybuttonmain" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dailyMain"
+
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dailyButton"
+        app:layout_constraintEnd_toEndOf="@+id/dailyButton"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/dailyButton"
+        app:layout_constraintTop_toTopOf="@+id/dailyButton"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="70dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:srcCompat="@drawable/sqinfmain" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="33dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/infoButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:srcCompat="@drawable/sqmain" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
