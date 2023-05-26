@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         ImageButton goToAllNotes = (ImageButton)findViewById(R.id.notesButton);
         ImageButton goToSettings = (ImageButton)findViewById(R.id.settingsButton);
         ImageButton goToInfo = (ImageButton)findViewById(R.id.infoButton);
