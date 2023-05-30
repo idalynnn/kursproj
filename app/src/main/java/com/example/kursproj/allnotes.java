@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import io.realm.Realm;
+
 public class allnotes extends AppCompatActivity {
 
     @Override
