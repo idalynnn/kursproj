@@ -21,6 +21,7 @@ public class allnotes extends AppCompatActivity {
         addNewNote.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
                 startActivity(new Intent(allnotes.this, noteview.class));
             }
         });
