@@ -35,7 +35,7 @@ public class noteview extends AppCompatActivity {
                 note.setName(Name);
                 note.setDescription(Text);
                 realm.commitTransaction();
-                Toast.makeText(getApplicationContext(), "Note SAVE",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
