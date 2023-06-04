@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,28 +7,39 @@
     android:background="@color/mainBgColor"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/addNewNoteButton"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="48dp"
+        android:background="@null"
+        app:srcCompat="@drawable/addbutton" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/gradientBottomMain"
-        android:hapticFeedbackEnabled="false"
+        android:layout_alignParentBottom="true"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bottomgradient" />
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="@string/gradientBottomMain"
+        app:srcCompat="@drawable/bottomgradient"/>
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/gradientTopMain"
+        android:layout_alignParentTop="true"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/gradientTopMain"
         app:srcCompat="@drawable/topgradient" />
 
     <ImageView
@@ -55,27 +66,15 @@
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
-    <ImageButton
-        android:id="@+id/addNewNoteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:srcCompat="@drawable/addbutton" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rycView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="605dp"
+        android:layout_alignTop="@id/imageView4"
+        android:layout_alignBottom="@id/addNewNoteButton"
+        android:layout_marginTop="121dp"
+        android:layout_marginBottom="81dp"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/addNewNoteButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
