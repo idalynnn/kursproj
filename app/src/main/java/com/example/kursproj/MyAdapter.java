@@ -56,17 +56,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             public boolean onLongClick(View v) {
 
                 PopupMenu menu = new PopupMenu(context,v);
-                menu.getMenu().add("DELETE");
+                menu.getMenu().add("Удалить");
                 menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        if(item.getTitle().equals("DELETE")){
+                        if(item.getTitle().equals("Удалить")){
                             //delete the note
                             Realm realm = Realm.getDefaultInstance();
                             realm.beginTransaction();
                             note.deleteFromRealm();
                             realm.commitTransaction();
-                            Toast.makeText(context,"Note deleted",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context,"Заметка удалена",Toast.LENGTH_SHORT).show();
                         }
                         return true;
                     }

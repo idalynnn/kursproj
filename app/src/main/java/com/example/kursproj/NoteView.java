@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.List;
+
 import io.realm.Realm;
 
 public class NoteView extends AppCompatActivity {
@@ -27,17 +29,33 @@ public class NoteView extends AppCompatActivity {
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String name = NameNote.getText().toString();
                 String text = TextNote.getText().toString();
+                String bufSec = name;
+                bufSec=bufSec.replaceAll("\\s+","");
+                if(!name.isEmpty())
+                {
+                    if(!bufSec.isEmpty())
+                    {
+                        realm.beginTransaction();
+                        Note note = realm.createObject(Note.class);
+                        note.setName(name);
+                        note.setDescription(text);
 
-                realm.beginTransaction();
-                Note note = realm.createObject(Note.class);
-                note.setName(name);
-                note.setDescription(text);
+                        realm.commitTransaction();
+                        Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Пусто",Toast.LENGTH_SHORT).show();
 
-                realm.commitTransaction();
-                Toast.makeText(getApplicationContext(), "NOTE SAVED",Toast.LENGTH_SHORT).show();
-                finish();
+                    }
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Пусто",Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
