@@ -11,7 +11,7 @@ public class Note extends RealmObject{
         return Name;
     }
 
-    public void setName(String name) {
+    public void setName(String Name) {
         this.Name = Name;
     }
 

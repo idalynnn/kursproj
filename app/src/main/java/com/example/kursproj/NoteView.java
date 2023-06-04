@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import io.realm.Realm;
 
-public class noteview extends AppCompatActivity {
+public class NoteView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,16 @@ public class noteview extends AppCompatActivity {
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Name = NameNote.getText().toString();
-                String Text = TextNote.getText().toString();
+                String name = NameNote.getText().toString();
+                String text = TextNote.getText().toString();
 
                 realm.beginTransaction();
                 Note note = realm.createObject(Note.class);
-                note.setName(Name);
-                note.setDescription(Text);
+                note.setName(name);
+                note.setDescription(text);
+
                 realm.commitTransaction();
-                Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "NOTE SAVED",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

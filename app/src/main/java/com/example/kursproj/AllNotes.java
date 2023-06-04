@@ -13,7 +13,7 @@ import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 
-public class allnotes extends AppCompatActivity {
+public class AllNotes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class allnotes extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                startActivity(new Intent(allnotes.this, noteview.class));
+                startActivity(new Intent(AllNotes.this, NoteView.class));
             }
         });
 
@@ -35,8 +35,8 @@ public class allnotes extends AppCompatActivity {
 
         RealmResults<Note> notesList = realm.where(Note.class).findAll();
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView recyclerView = findViewById(R.id.rycView);
+        recyclerView.(new LinearLayoutManager(this));
         MyAdapter myAdapter = new MyAdapter(getApplicationContext(),notesList);
         recyclerView.setAdapter(myAdapter);
 

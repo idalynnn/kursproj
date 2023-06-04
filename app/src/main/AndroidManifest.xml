@@ -16,10 +16,10 @@
             android:name=".settings"
             android:exported="false" />
         <activity
-            android:name=".noteview"
+            android:name=".NoteView"
             android:exported="false" />
         <activity
-            android:name=".allnotes"
+            android:name=".AllNotes"
             android:exported="false"
             android:label="@string/title_activity_allnotes"
             android:theme="@style/Theme.Kursproj" />
