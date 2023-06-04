@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* goToInfo.setOnClickListener(new View.OnClickListener() {
+        goToInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this,allnotes.class));
+                startActivity(new Intent(MainActivity.this, AllNotes.class));
             }
-        });*/
+        });
 
 
     }
