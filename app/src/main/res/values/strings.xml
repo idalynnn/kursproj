@@ -9,4 +9,8 @@
     <string name="gradientTopMain">Notes button in the main screen</string>
     <string name="rectangle">Rectangle on the top</string>
     <string name="title_activity_allnotes">allnotes</string>
+    <string name="today">Сегодня</string>
+    <string name="week">Неделя</string>
+    <string name="month">Месяц</string>
+
 </resources>
