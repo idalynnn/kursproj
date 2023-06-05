@@ -26,10 +26,6 @@
         android:gravity="end"
         android:textColor="#858484"
         tools:text="Истекает 11.06.2023"/>
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_toRightOf=""
-        android:layout_width=""
-        android:layout_height="" />
+
 
 </RelativeLayout>

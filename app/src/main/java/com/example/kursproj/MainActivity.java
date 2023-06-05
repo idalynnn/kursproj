@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, settings.class));
             }
         });
-
-       /* goToInfo.setOnClickListener(new View.OnClickListener() {
+/*
+        goToInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, AllNotes.class));
             }
         });*/
 
-        goToInfo.setOnClickListener(new View.OnClickListener() {
+        goToDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, Diary.class));

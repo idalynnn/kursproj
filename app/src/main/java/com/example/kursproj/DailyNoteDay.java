@@ -1,14 +1,14 @@
 package com.example.kursproj;
 
-public class DailyNoteOne {
+public class DailyNoteDay {
 
     String Text;
 
-    public String getTextOne() {
+    public String getTextDay() {
         return Text;
     }
 
-    public void setTextOne(String Text) {
+    public void setTextDay(String Text) {
         this.Text = Text;
     }
 
