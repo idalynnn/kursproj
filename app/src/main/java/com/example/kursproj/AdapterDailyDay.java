@@ -23,7 +23,7 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
     @NonNull
     @Override
     public DailyViewHolderDay onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new DailyViewHolderDay(LayoutInflater.from(context).inflate(R.layout.diary_item_view,parent,false));
+        return new DailyViewHolderDay(LayoutInflater.from(context).inflate(R.layout.dialy_item_view,parent,false));
     }
 
     @Override

@@ -4,6 +4,7 @@
     <string name="logoOfApp">OurNotes</string>
     <string name="logoOfNote">Заметки</string>
     <string name="dailyMain">Ежедневник</string>
+    <string name="info">Информация</string>
     <string name="notesMain">Заметки</string>
     <string name="gradientBottomMain">Notes button in the main screen</string>
     <string name="gradientTopMain">Notes button in the main screen</string>
@@ -12,5 +13,18 @@
     <string name="today">Сегодня</string>
     <string name="week">Неделя</string>
     <string name="month">Месяц</string>
+    <string name="title">Title</string>
+
+    <string name="inf1">Наше приложение OurNotes было создано для курсового проекта в Московском Политехе, а также для конкурса "Твой Ход"</string>
+    <string name="inf2">Над приложением работали Тельнова Елизавета Эдуардовна и Кочеткова Татьяна Александровна</string>
+    <string name="inf3">*Приложение со временем будет совершенствоваться</string>
+    <string name="inf4">Московский Политех</string>
+    <string name="inf5">2023 год</string>
+
+    <string-array name="types">
+        <item>Сегодня</item>
+        <item>Неделя</item>
+        <item>Месяц</item>
+    </string-array>
 
 </resources>

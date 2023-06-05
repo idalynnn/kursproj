@@ -24,7 +24,7 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
     @NonNull
     @Override
     public DailyViewHolderWeek onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AdapterDailyWeek.DailyViewHolderWeek(LayoutInflater.from(context).inflate(R.layout.diary_item_view,parent,false));
+        return new AdapterDailyWeek.DailyViewHolderWeek(LayoutInflater.from(context).inflate(R.layout.dialy_item_view,parent,false));
     }
 
     @Override

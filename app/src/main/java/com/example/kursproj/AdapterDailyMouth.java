@@ -24,7 +24,7 @@ public class AdapterDailyMouth extends RecyclerView.Adapter<AdapterDailyMouth.Da
     @NonNull
     @Override
     public DailyViewHolderMouth onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AdapterDailyMouth.DailyViewHolderMouth(LayoutInflater.from(context).inflate(R.layout.diary_item_view,parent,false));
+        return new AdapterDailyMouth.DailyViewHolderMouth(LayoutInflater.from(context).inflate(R.layout.dialy_item_view,parent,false));
     }
 
     @Override

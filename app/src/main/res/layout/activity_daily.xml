@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBgColor"
-    tools:context=".Diary">
+    tools:context=".Daily">
 
 
     <ImageView
@@ -70,13 +70,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/today"
+        android:text="@string/week"
         android:textColor="@color/textColor"
-        app:layout_constraintBottom_toBottomOf="@+id/dayButton"
-        app:layout_constraintEnd_toEndOf="@+id/dayButton"
-        app:layout_constraintStart_toStartOf="@id/dayButton"
-        app:layout_constraintTop_toTopOf="@+id/dayButton" />
-
+        app:layout_constraintBottom_toBottomOf="@id/weekButton"
+        app:layout_constraintEnd_toEndOf="@id/weekButton"
+        app:layout_constraintStart_toStartOf="@id/weekButton"
+        app:layout_constraintTop_toTopOf="@id/weekButton"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageButton
         android:id="@+id/dayButton"
@@ -89,6 +89,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/rectdiary" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/today"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="@id/dayButton"
+        app:layout_constraintEnd_toEndOf="@id/dayButton"
+        app:layout_constraintStart_toStartOf="@id/dayButton"
+        app:layout_constraintTop_toTopOf="@id/dayButton"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <ImageButton
         android:id="@+id/monthButton"
         android:layout_width="wrap_content"
@@ -99,6 +110,18 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/rectdiary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/month"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="@id/monthButton"
+        app:layout_constraintEnd_toEndOf="@id/monthButton"
+        app:layout_constraintStart_toStartOf="@id/monthButton"
+        app:layout_constraintTop_toTopOf="@id/monthButton"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <ImageButton
         android:id="@+id/addNewNoteButton"
         android:layout_width="wrap_content"
