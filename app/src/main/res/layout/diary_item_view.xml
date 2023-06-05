@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/rounded_corner">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textoutput"
+        android:textSize="17dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/textColor"
+        tools:text="My long long long description"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:id="@+id/timeoutput"
+        android:layout_below="@id/textoutput"
+        android:textSize="12dp"
+        android:gravity="end"
+        android:textColor="#858484"
+        tools:text="Истекает 11.06.2023"/>
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_toRightOf=""
+        android:layout_width=""
+        android:layout_height="" />
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.kursproj;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.realm.Realm;
@@ -35,7 +36,6 @@ public class AllNotes extends AppCompatActivity {
         Realm realm = Realm.getDefaultInstance();
 
         RealmResults<Note> notesList = realm.where(Note.class).findAll();
-
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
