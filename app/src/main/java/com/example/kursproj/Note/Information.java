@@ -1,14 +1,16 @@
-package com.example.kursproj;
+package com.example.kursproj.Note;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class settings extends AppCompatActivity {
+import com.example.kursproj.R;
+
+public class Information extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_information);
     }
 }

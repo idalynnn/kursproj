@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Note;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,12 +9,11 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.text.DateFormat;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.kursproj.R;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 

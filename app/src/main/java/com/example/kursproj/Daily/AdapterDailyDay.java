@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Daily;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,16 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kursproj.R;
+
 import io.realm.RealmResults;
 
 public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyViewHolderDay>{
 
     Context context;
-    RealmResults<DailyNoteDay> notesList;
+    RealmResults<DailyNoteDay> DailyOneList;
 
     public AdapterDailyDay(Context context, RealmResults<DailyNoteDay> noteList) {
         this.context = context;
-        this.notesList = noteList;
+        this.DailyOneList = noteList;
     }
     @NonNull
     @Override
@@ -28,25 +30,25 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
 
     @Override
     public void onBindViewHolder(@NonNull DailyViewHolderDay holder, int position) {
-        DailyNoteDay note = notesList.get(position);
-        holder.TextOutput.setText(note.getTextDay());
-        holder.TimeOutput.setText("Data");
+        DailyNoteDay DailyOne = DailyOneList.get(position);
+        holder.TextDayOutput.setText(DailyOne.getTextDay());
+        holder.TimeDayOutput.setText(DailyOne.getDataDay());
     }
 
     @Override
     public int getItemCount() {
-        return notesList.size();
+        return DailyOneList.size();
     }
 
     public class DailyViewHolderDay extends RecyclerView.ViewHolder{
 
-        TextView TextOutput;
-        TextView TimeOutput;
+        TextView TextDayOutput;
+        TextView TimeDayOutput;
 
         public DailyViewHolderDay(@NonNull View itemView) {
             super(itemView);
-            TextOutput = itemView.findViewById(R.id.titleoutput);
-            TimeOutput = itemView.findViewById(R.id.timeoutput);
+            TextDayOutput = itemView.findViewById(R.id.textoutput);
+            TimeDayOutput = itemView.findViewById(R.id.timeoutput);
         }
     }
 }

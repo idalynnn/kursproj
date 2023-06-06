@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Daily;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.kursproj.R;
 
 import io.realm.RealmResults;
 
@@ -31,7 +33,7 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
     public void onBindViewHolder(@NonNull DailyViewHolderWeek holder, int position) {
         DailyNoteWeek note = notesList.get(position);
         holder.TextOutput.setText(note.getTextWeek());
-        holder.TimeOutput.setText("Data");
+        holder.TimeOutput.setText(note.getDataWeek());
     }
 
     @Override
@@ -46,7 +48,7 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
 
         public DailyViewHolderWeek(@NonNull View itemView) {
             super(itemView);
-            TextOutput = itemView.findViewById(R.id.titleoutput);
+            TextOutput = itemView.findViewById(R.id.textoutput);
             TimeOutput = itemView.findViewById(R.id.timeoutput);
         }
     }

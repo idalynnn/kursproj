@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Note;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import java.util.List;
+import com.example.kursproj.R;
 
 import io.realm.Realm;
 

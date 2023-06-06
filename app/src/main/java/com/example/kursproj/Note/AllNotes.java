@@ -1,7 +1,6 @@
-package com.example.kursproj;
+package com.example.kursproj.Note;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.realm.Realm;
@@ -12,6 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+
+import com.example.kursproj.R;
 
 
 public class AllNotes extends AppCompatActivity {

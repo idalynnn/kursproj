@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Daily;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.kursproj.R;
 
 import io.realm.RealmResults;
 
@@ -31,7 +33,7 @@ public class AdapterDailyMouth extends RecyclerView.Adapter<AdapterDailyMouth.Da
     public void onBindViewHolder(@NonNull DailyViewHolderMouth holder, int position) {
         DailyNoteMouth note = notesList.get(position);
         holder.TextOutput.setText(note.getTextMouth());
-        holder.TimeOutput.setText("Data");
+        holder.TimeOutput.setText(note.getDataMouth());
     }
 
     @Override
@@ -47,7 +49,7 @@ public class AdapterDailyMouth extends RecyclerView.Adapter<AdapterDailyMouth.Da
 
         public DailyViewHolderMouth(@NonNull View itemView) {
             super(itemView);
-            TextOutput = itemView.findViewById(R.id.titleoutput);
+            TextOutput = itemView.findViewById(R.id.textoutput);
             TimeOutput = itemView.findViewById(R.id.timeoutput);
         }
     }

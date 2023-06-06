@@ -1,4 +1,4 @@
-package com.example.kursproj;
+package com.example.kursproj.Note;
 
 import io.realm.RealmObject;
 

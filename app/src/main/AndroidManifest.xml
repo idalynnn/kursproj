@@ -13,27 +13,27 @@
         android:theme="@style/Theme.Kursproj"
         tools:targetApi="31">
         <activity
-            android:name=".Information"
+            android:name=".Note.Information"
             android:exported="false" />
         <activity
-            android:name=".DailyNoteView"
+            android:name=".Daily.DailyNoteView"
             android:exported="false" />
         <activity
-            android:name=".Daily"
+            android:name=".Daily.Daily"
             android:exported="false" />
         <activity
-            android:name=".settings"
+            android:name=".Note.settings"
             android:exported="false" />
         <activity
-            android:name=".NoteView"
+            android:name=".Note.NoteView"
             android:exported="false" />
         <activity
-            android:name=".AllNotes"
+            android:name=".Note.AllNotes"
             android:exported="false"
             android:label="@string/title_activity_allnotes"
             android:theme="@style/Theme.Kursproj" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Note.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
