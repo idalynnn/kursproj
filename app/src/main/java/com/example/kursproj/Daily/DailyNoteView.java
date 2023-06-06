@@ -39,13 +39,12 @@ public class DailyNoteView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String chang_sp = spinner.getSelectedItem().toString();
-                String TextPush = Text.getText().toString();
 
                 if (chang_sp.equals("Сегодня")){
 
                     realmDay.beginTransaction();
                     DailyNoteDay daily = realmDay.createObject(DailyNoteDay.class);
-                    daily.setTextDay(TextPush);
+                    daily.setTextDay(Text.getText().toString());
                     daily.setDataDay("Изчезнет через день");
                     realmDay.commitTransaction();
                     Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
@@ -55,7 +54,7 @@ public class DailyNoteView extends AppCompatActivity {
                 {
                     realmDay.beginTransaction();
                     DailyNoteWeek daily = realmDay.createObject(DailyNoteWeek.class);
-                    daily.setTextWeek(TextPush);
+                    daily.setTextWeek(Text.getText().toString());
                     daily.setDataWeek("Изчезнет через неделю");
                     realmDay.commitTransaction();
                     Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
@@ -65,7 +64,7 @@ public class DailyNoteView extends AppCompatActivity {
                 {
                     realmDay.beginTransaction();
                     DailyNoteMouth daily = realmDay.createObject(DailyNoteMouth.class);
-                    daily.setTextMouth(TextPush);
+                    daily.setTextMouth(Text.getText().toString());
                     daily.setDataMouth("Изчезнет через месяц");
                     realmDay.commitTransaction();
                     Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();

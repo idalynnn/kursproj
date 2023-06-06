@@ -29,7 +29,7 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DailyViewHolderDay holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterDailyDay.DailyViewHolderDay holder, int position) {
         DailyNoteDay DailyOne = DailyOneList.get(position);
         holder.TextDayOutput.setText(DailyOne.getTextDay());
         holder.TimeDayOutput.setText(DailyOne.getDataDay());
