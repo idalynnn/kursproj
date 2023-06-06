@@ -24,7 +24,13 @@ public class Daily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily);
 
-        ImageButton addNewNoteButton = (ImageButton)findViewById(R.id.addNewNoteButton);
+        ImageButton addNewNoteButton = findViewById(R.id.addNewNoteButton);
+
+        ImageButton DayBut =findViewById(R.id.dayButton);
+        ImageButton WeekBut =findViewById(R.id.weekButton);
+        ImageButton MouthBut =findViewById(R.id.monthButton);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         addNewNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +44,6 @@ public class Daily extends AppCompatActivity {
 
         RealmResults<DailyNoteDay> dailyList = realmDay.where(DailyNoteDay.class).findAll();
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         AdapterDailyDay myAdapter = new AdapterDailyDay(getApplicationContext(),dailyList);
         recyclerView.setAdapter(myAdapter);
 
@@ -51,5 +55,63 @@ public class Daily extends AppCompatActivity {
             }
         });
 
+
+        DayBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                RealmResults<DailyNoteDay> dailyList = realmDay.where(DailyNoteDay.class).findAll();
+
+                AdapterDailyDay myAdapter = new AdapterDailyDay(getApplicationContext(),dailyList);
+                recyclerView.setAdapter(myAdapter);
+
+                dailyList.addChangeListener(new RealmChangeListener<RealmResults<DailyNoteDay>>() {
+
+                    @Override
+                    public void onChange(RealmResults<DailyNoteDay> notes) {
+                        myAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
+
+
+        WeekBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                RealmResults<DailyNoteWeek> dailyList = realmDay.where(DailyNoteWeek.class).findAll();
+
+                AdapterDailyWeek myAdapter = new AdapterDailyWeek(getApplicationContext(),dailyList);
+                recyclerView.setAdapter(myAdapter);
+
+                dailyList.addChangeListener(new RealmChangeListener<RealmResults<DailyNoteWeek>>() {
+
+                    @Override
+                    public void onChange(RealmResults<DailyNoteWeek> notes) {
+                        myAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
+
+        MouthBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                RealmResults<DailyNoteMouth> dailyList = realmDay.where(DailyNoteMouth.class).findAll();
+
+                AdapterDailyMouth myAdapter = new AdapterDailyMouth(getApplicationContext(),dailyList);
+                recyclerView.setAdapter(myAdapter);
+
+                dailyList.addChangeListener(new RealmChangeListener<RealmResults<DailyNoteMouth>>() {
+
+                    @Override
+                    public void onChange(RealmResults<DailyNoteMouth> notes) {
+                        myAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
     }
 }

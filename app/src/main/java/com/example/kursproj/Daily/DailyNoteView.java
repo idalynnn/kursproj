@@ -43,8 +43,6 @@ public class DailyNoteView extends AppCompatActivity {
 
                 if (chang_sp.equals("Сегодня")){
 
-
-
                     realmDay.beginTransaction();
                     DailyNoteDay daily = realmDay.createObject(DailyNoteDay.class);
                     daily.setTextDay(TextPush);
@@ -53,7 +51,26 @@ public class DailyNoteView extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
                     finish();
                 }
-
+                else if (chang_sp.equals("Неделя"))
+                {
+                    realmDay.beginTransaction();
+                    DailyNoteWeek daily = realmDay.createObject(DailyNoteWeek.class);
+                    daily.setTextWeek(TextPush);
+                    daily.setDataWeek("Изчезнет через неделю");
+                    realmDay.commitTransaction();
+                    Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else if (chang_sp.equals("Месяц"))
+                {
+                    realmDay.beginTransaction();
+                    DailyNoteMouth daily = realmDay.createObject(DailyNoteMouth.class);
+                    daily.setTextMouth(TextPush);
+                    daily.setDataMouth("Изчезнет через месяц");
+                    realmDay.commitTransaction();
+                    Toast.makeText(getApplicationContext(), "Заметка сохранена",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
 
