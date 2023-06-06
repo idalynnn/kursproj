@@ -1,4 +1,4 @@
-package com.example.kursproj.Daily;
+package com.example.kursproj.Daily.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kursproj.Daily.DailyNoteMouth;
 import com.example.kursproj.R;
 
 import io.realm.RealmResults;

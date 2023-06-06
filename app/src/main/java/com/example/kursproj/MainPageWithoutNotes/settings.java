@@ -1,4 +1,4 @@
-package com.example.kursproj.Note;
+package com.example.kursproj.MainPageWithoutNotes;
 
 import androidx.appcompat.app.AppCompatActivity;
 

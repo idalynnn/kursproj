@@ -1,4 +1,4 @@
-package com.example.kursproj.Note;
+package com.example.kursproj;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.kursproj.Daily.Daily;
-import com.example.kursproj.R;
+import com.example.kursproj.MainPageWithoutNotes.Information;
+import com.example.kursproj.Note.AllNotes;
+import com.example.kursproj.MainPageWithoutNotes.settings;
 
 public class MainActivity extends AppCompatActivity {
 
