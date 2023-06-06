@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kursproj.Daily.DailyNoteMouth;
+import com.example.kursproj.Daily.DailyNoteWeek;
 import com.example.kursproj.R;
 
 import io.realm.Realm;
@@ -61,11 +62,15 @@ public class AdapterDailyMouth extends RecyclerView.Adapter<AdapterDailyMouth.Da
                 spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 holder.TextOutput.setText(spannableString);
 
+/*
+                Realm realmDay = Realm.getDefaultInstance();
+                realmDay.beginTransaction();
+                DailyNoteMouth daily = realmDay.createObject(DailyNoteMouth.class);
+                daily.setTextMouth(spannableString.toString());
+                daily.setDataMouth("Завершено преждевременно");
 
-                /*Realm realm = Realm.getDefaultInstance();
-                realm.beginTransaction();
-                realm.copyToRealmOrUpdate(note);
-                realm.commitTransaction();*/
+                realmDay.copyToRealmOrUpdate(daily);
+                realmDay.commitTransaction();*/
 
 
             }
