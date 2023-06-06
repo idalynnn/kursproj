@@ -13,6 +13,7 @@
         android:padding="5dp">
 
         <LinearLayout
+            android:id="@+id/item"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

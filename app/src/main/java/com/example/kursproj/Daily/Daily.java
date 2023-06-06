@@ -4,10 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.kursproj.Daily.Adapters.AdapterDailyDay;
 import com.example.kursproj.Daily.Adapters.AdapterDailyMouth;
@@ -25,6 +33,9 @@ public class Daily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily);
 
+
+
+
         ImageButton addNewNoteButton = findViewById(R.id.addNewNoteButton);
 
         ImageButton DayBut =findViewById(R.id.dayButton);
@@ -33,12 +44,22 @@ public class Daily extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+
+
+        Drawable img = DayBut.getDrawable();
+        img.setTint(Color.parseColor("#ffe4e1"));
+        DayBut.setBackground(img);
+
+
         addNewNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(Daily.this, DailyNoteView.class));
             }
         });
+
+
 
         Realm.init(getApplicationContext());
         Realm realmDay = Realm.getDefaultInstance();
@@ -61,6 +82,15 @@ public class Daily extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Drawable img1 = DayBut.getDrawable();
+                Drawable img2 = WeekBut.getDrawable();
+                Drawable img3 = MouthBut.getDrawable();
+                img1.setTint(Color.parseColor("#ffe4e1"));
+                img2.setTint(Color.parseColor("#FFFFFF"));
+                img3.setTint(Color.parseColor("#FFFFFF"));
+                DayBut.setBackground(img1);
+                WeekBut.setBackground(img2);
+                MouthBut.setBackground(img3);
                 RealmResults<DailyNoteDay> dailyList = realmDay.where(DailyNoteDay.class).findAll();
 
                 AdapterDailyDay myAdapter = new AdapterDailyDay(getApplicationContext(),dailyList);
@@ -81,6 +111,16 @@ public class Daily extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Drawable img1 = DayBut.getDrawable();
+                Drawable img2 = WeekBut.getDrawable();
+                Drawable img3 = MouthBut.getDrawable();
+                img1.setTint(Color.parseColor("#FFFFFF"));
+                img2.setTint(Color.parseColor("#ffe4e1"));
+                img3.setTint(Color.parseColor("#FFFFFF"));
+                DayBut.setBackground(img1);
+                WeekBut.setBackground(img2);
+                MouthBut.setBackground(img3);
+
                 RealmResults<DailyNoteWeek> dailyList = realmDay.where(DailyNoteWeek.class).findAll();
 
                 AdapterDailyWeek myAdapter = new AdapterDailyWeek(getApplicationContext(),dailyList);
@@ -99,7 +139,15 @@ public class Daily extends AppCompatActivity {
         MouthBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Drawable img1 = DayBut.getDrawable();
+                Drawable img2 = WeekBut.getDrawable();
+                Drawable img3 = MouthBut.getDrawable();
+                img1.setTint(Color.parseColor("#FFFFFF"));
+                img2.setTint(Color.parseColor("#FFFFFF"));
+                img3.setTint(Color.parseColor("#ffe4e1"));
+                DayBut.setBackground(img1);
+                WeekBut.setBackground(img2);
+                MouthBut.setBackground(img3);
                 RealmResults<DailyNoteMouth> dailyList = realmDay.where(DailyNoteMouth.class).findAll();
 
                 AdapterDailyMouth myAdapter = new AdapterDailyMouth(getApplicationContext(),dailyList);

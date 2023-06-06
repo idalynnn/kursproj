@@ -2,9 +2,12 @@ package com.example.kursproj.Daily.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kursproj.Daily.DailyNoteDay;
 import com.example.kursproj.R;
 
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyViewHolderDay>{
@@ -34,6 +38,32 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
         DailyNoteDay DailyOne = DailyOneList.get(position);
         holder.TextDayOutput.setText(DailyOne.getTextDay());
         holder.TimeDayOutput.setText(DailyOne.getDataDay());
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                PopupMenu menu = new PopupMenu(context,v);
+                menu.getMenu().add("Удалить");
+                menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        if(item.getTitle().equals("Удалить")){
+                            //delete the note
+                            Realm realm = Realm.getDefaultInstance();
+                            realm.beginTransaction();
+                            DailyOne.deleteFromRealm();
+                            realm.commitTransaction();
+                            Toast.makeText(context,"Заметка удалена",Toast.LENGTH_SHORT).show();
+                        }
+                        return true;
+                    }
+                });
+                menu.show();
+
+                return true;
+            }
+        });
     }
 
     @Override
