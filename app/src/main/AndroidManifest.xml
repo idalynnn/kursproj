@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Kursproj"
         tools:targetApi="31">
         <activity
-            android:name=".Note.Information"
+            android:name=".MainPageWithoutNotes.Information"
             android:exported="false" />
         <activity
             android:name=".Daily.DailyNoteView"
@@ -22,7 +22,7 @@
             android:name=".Daily.Daily"
             android:exported="false" />
         <activity
-            android:name=".Note.settings"
+            android:name=".MainPageWithoutNotes.settings"
             android:exported="false" />
         <activity
             android:name=".Note.NoteView"
@@ -33,7 +33,7 @@
             android:label="@string/title_activity_allnotes"
             android:theme="@style/Theme.Kursproj" />
         <activity
-            android:name=".Note.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

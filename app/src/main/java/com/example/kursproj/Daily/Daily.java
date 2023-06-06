@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.kursproj.Note.MyAdapter;
-import com.example.kursproj.Note.Note;
+import com.example.kursproj.Daily.Adapters.AdapterDailyDay;
+import com.example.kursproj.Daily.Adapters.AdapterDailyMouth;
+import com.example.kursproj.Daily.Adapters.AdapterDailyWeek;
 import com.example.kursproj.R;
 
 import io.realm.Realm;
