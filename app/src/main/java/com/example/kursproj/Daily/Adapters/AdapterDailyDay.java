@@ -1,10 +1,17 @@
 package com.example.kursproj.Daily.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +45,21 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
         DailyNoteDay DailyOne = DailyOneList.get(position);
         holder.TextDayOutput.setText(DailyOne.getTextDay());
         holder.TimeDayOutput.setText(DailyOne.getDataDay());
+
+        holder.Check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Drawable img = holder.line.getBackground();
+                img.setTint(Color.GRAY);
+                holder.line.setBackground(img);
+                holder.TimeDayOutput.setText("Завершено преждевременно");
+                String ans = DailyOne.getTextDay();
+                SpannableString spannableString = new SpannableString(ans);
+                StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+                spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                holder.TextDayOutput.setText(spannableString);
+            }
+        });
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -75,11 +97,15 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
 
         TextView TextDayOutput;
         TextView TimeDayOutput;
+        CheckBox Check;
+        LinearLayout line;
 
         public DailyViewHolderDay(@NonNull View itemView) {
             super(itemView);
             TextDayOutput = itemView.findViewById(R.id.textoutput);
             TimeDayOutput = itemView.findViewById(R.id.timeoutput);
+            Check = itemView.findViewById(R.id.checkBox);
+            line = itemView.findViewById(R.id.item);
         }
     }
 }

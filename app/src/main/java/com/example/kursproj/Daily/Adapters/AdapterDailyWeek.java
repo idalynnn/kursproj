@@ -1,10 +1,17 @@
 package com.example.kursproj.Daily.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +47,22 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
         holder.TextOutput.setText(note.getTextWeek());
         holder.TimeOutput.setText(note.getDataWeek());
 
+        holder.Check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Drawable img = holder.line.getBackground();
+                img.setTint(Color.GRAY);
+                holder.line.setBackground(img);
+
+                holder.TimeOutput.setText("Завершено преждевременно");
+
+                String ans = note.getTextWeek();
+                SpannableString spannableString = new SpannableString(ans);
+                StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+                spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                holder.TextOutput.setText(spannableString);
+            }
+        });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -76,11 +99,15 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
 
         TextView TextOutput;
         TextView TimeOutput;
+        CheckBox Check;
+        LinearLayout line;
 
         public DailyViewHolderWeek(@NonNull View itemView) {
             super(itemView);
             TextOutput = itemView.findViewById(R.id.textoutput);
             TimeOutput = itemView.findViewById(R.id.timeoutput);
+            Check = itemView.findViewById(R.id.checkBox);
+            line = itemView.findViewById(R.id.item);
         }
     }
 }
