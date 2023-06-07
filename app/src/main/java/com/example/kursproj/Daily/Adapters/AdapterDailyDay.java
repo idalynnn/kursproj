@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -34,6 +35,7 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
         this.context = context;
         this.DailyOneList = noteList;
     }
+
     @NonNull
     @Override
     public DailyViewHolderDay onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,18 +48,47 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
         holder.TextDayOutput.setText(DailyOne.getTextDay());
         holder.TimeDayOutput.setText(DailyOne.getDataDay());
 
+        String ans = DailyOne.getTextDay();
+
+        SpannableString spannableString = new SpannableString(ans);
+        StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+
+
+        if (!DailyOne.isChecked()) {
+
+            holder.TextDayOutput.setText(DailyOne.getTextDay());
+            holder.TimeDayOutput.setText(DailyOne.getDataDay());
+
+
+        } else {
+            holder.TimeDayOutput.setText("Завершено преждевременно");
+            holder.Check.setChecked(true);
+            holder.Check.setEnabled(false);
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.GRAY);
+            spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(foregroundColorSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            holder.TextDayOutput.setText(spannableString);
+
+        }
+
         holder.Check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Drawable img = holder.line.getBackground();
-                img.setTint(Color.GRAY);
-                holder.line.setBackground(img);
-                holder.TimeDayOutput.setText("Завершено преждевременно");
-                String ans = DailyOne.getTextDay();
-                SpannableString spannableString = new SpannableString(ans);
-                StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
-                spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                holder.TextDayOutput.setText(spannableString);
+
+                Realm realmDay = Realm.getDefaultInstance();
+                realmDay.beginTransaction();
+
+                if(!DailyOne.isChecked())
+                {
+                    DailyOne.setChecked(true);
+                }
+                else
+                {
+                    DailyOne.setChecked(false);
+                }
+
+                realmDay.commitTransaction();
+                realmDay.close();
             }
         });
 
@@ -77,6 +108,7 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
                             DailyOne.deleteFromRealm();
                             realm.commitTransaction();
                             Toast.makeText(context,"Заметка удалена",Toast.LENGTH_SHORT).show();
+                            realm.close();
                         }
                         return true;
                     }

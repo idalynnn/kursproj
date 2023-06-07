@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -47,20 +48,44 @@ public class AdapterDailyWeek extends RecyclerView.Adapter<AdapterDailyWeek.Dail
         holder.TextOutput.setText(note.getTextWeek());
         holder.TimeOutput.setText(note.getDataWeek());
 
+        String ans = note.getTextWeek();
+
+        SpannableString spannableString = new SpannableString(ans);
+        StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+
+        if (!note.isChecked()) {
+
+            holder.TimeOutput.setText(note.getDataWeek());
+            holder.TextOutput.setText(note.getTextWeek());
+
+        } else {holder.TimeOutput.setText("Завершено преждевременно");
+            holder.Check.setChecked(true);
+            holder.Check.setEnabled(false);
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.GRAY);
+            spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(foregroundColorSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            holder.TextOutput.setText(spannableString);
+
+        }
         holder.Check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Drawable img = holder.line.getBackground();
-                img.setTint(Color.GRAY);
-                holder.line.setBackground(img);
 
-                holder.TimeOutput.setText("Завершено преждевременно");
+                Realm realmDay = Realm.getDefaultInstance();
+                realmDay.beginTransaction();
 
-                String ans = note.getTextWeek();
-                SpannableString spannableString = new SpannableString(ans);
-                StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
-                spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                holder.TextOutput.setText(spannableString);
+                if(!note.isChecked())
+                {
+                    note.setChecked(true);
+                }
+                else
+                {
+                    note.setChecked(false);
+                }
+
+                realmDay.commitTransaction();
+                realmDay.close();
+
             }
         });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {

@@ -6,6 +6,16 @@ public class DailyNoteMouth extends RealmObject {
 
     String Text;
     String Data;
+
+    boolean isChecked = false;
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
     public String getTextMouth() {
         return Text;
     }

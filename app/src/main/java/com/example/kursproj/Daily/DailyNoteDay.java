@@ -5,8 +5,16 @@ import io.realm.RealmObject;
 public class DailyNoteDay extends RealmObject {
 
     String Text;
+    boolean isChecked = false;
     String Data;
 
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
     public String getTextDay() {
         return Text;
     }

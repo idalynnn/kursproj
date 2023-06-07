@@ -47,9 +47,11 @@ public class Daily extends AppCompatActivity {
 
 
 
+
         Drawable img = DayBut.getDrawable();
         img.setTint(Color.parseColor("#ffe4e1"));
         DayBut.setBackground(img);
+
 
 
         addNewNoteButton.setOnClickListener(new View.OnClickListener() {

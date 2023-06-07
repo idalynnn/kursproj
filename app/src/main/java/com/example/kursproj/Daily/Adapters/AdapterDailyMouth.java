@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -48,29 +49,44 @@ public class AdapterDailyMouth extends RecyclerView.Adapter<AdapterDailyMouth.Da
         holder.TextOutput.setText(note.getTextMouth());
         holder.TimeOutput.setText(note.getDataMouth());
 
+        String ans = note.getTextMouth();
+
+        SpannableString spannableString = new SpannableString(ans);
+        StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
+
+        if (!note.isChecked()) {
+
+            holder.TimeOutput.setText(note.getDataMouth());
+            holder.TextOutput.setText(note.getTextMouth());
+
+        } else {
+            holder.TimeOutput.setText("Завершено преждевременно");
+            holder.Check.setChecked(true);
+            holder.Check.setEnabled(false);
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.GRAY);
+            spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(foregroundColorSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            holder.TextOutput.setText(spannableString);
+
+        }
         holder.Check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Drawable img = holder.line.getBackground();
-                img.setTint(Color.GRAY);
-                holder.line.setBackground(img);
-                holder.TimeOutput.setText("Завершено преждевременно");
 
-                String ans = note.getTextMouth();
-                SpannableString spannableString = new SpannableString(ans);
-                StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
-                spannableString.setSpan(strikethroughSpan, 0, ans.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                holder.TextOutput.setText(spannableString);
-
-/*
                 Realm realmDay = Realm.getDefaultInstance();
                 realmDay.beginTransaction();
-                DailyNoteMouth daily = realmDay.createObject(DailyNoteMouth.class);
-                daily.setTextMouth(spannableString.toString());
-                daily.setDataMouth("Завершено преждевременно");
 
-                realmDay.copyToRealmOrUpdate(daily);
-                realmDay.commitTransaction();*/
+                if(!note.isChecked())
+                {
+                    note.setChecked(true);
+                }
+                else
+                {
+                    note.setChecked(false);
+                }
+
+                realmDay.commitTransaction();
+                realmDay.close();
 
 
             }
