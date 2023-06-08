@@ -66,18 +66,18 @@
         app:srcCompat="@drawable/themechange" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/purpleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
         android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintEnd_toStartOf="@+id/blueBtn"
+        app:layout_constraintStart_toEndOf="@+id/defaultBtn"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:srcCompat="@drawable/circlepurple" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/defaultBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -88,7 +88,7 @@
         app:srcCompat="@drawable/circlered" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/blueBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -98,15 +98,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:srcCompat="@drawable/circleblue" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:srcCompat="@drawable/fontchange" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

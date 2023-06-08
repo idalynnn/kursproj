@@ -49,7 +49,7 @@ public class Daily extends AppCompatActivity {
 
 
         Drawable img = DayBut.getDrawable();
-        img.setTint(Color.parseColor("#ffe4e1"));
+        img.setTint(Color.parseColor("#F4AE9E"));
         DayBut.setBackground(img);
 
 
@@ -87,7 +87,7 @@ public class Daily extends AppCompatActivity {
                 Drawable img1 = DayBut.getDrawable();
                 Drawable img2 = WeekBut.getDrawable();
                 Drawable img3 = MouthBut.getDrawable();
-                img1.setTint(Color.parseColor("#ffe4e1"));
+                img1.setTint(Color.parseColor("#F4AE9E"));
                 img2.setTint(Color.parseColor("#FFFFFF"));
                 img3.setTint(Color.parseColor("#FFFFFF"));
                 DayBut.setBackground(img1);
@@ -117,7 +117,7 @@ public class Daily extends AppCompatActivity {
                 Drawable img2 = WeekBut.getDrawable();
                 Drawable img3 = MouthBut.getDrawable();
                 img1.setTint(Color.parseColor("#FFFFFF"));
-                img2.setTint(Color.parseColor("#ffe4e1"));
+                img2.setTint(Color.parseColor("#F4AE9E"));
                 img3.setTint(Color.parseColor("#FFFFFF"));
                 DayBut.setBackground(img1);
                 WeekBut.setBackground(img2);
@@ -146,7 +146,7 @@ public class Daily extends AppCompatActivity {
                 Drawable img3 = MouthBut.getDrawable();
                 img1.setTint(Color.parseColor("#FFFFFF"));
                 img2.setTint(Color.parseColor("#FFFFFF"));
-                img3.setTint(Color.parseColor("#ffe4e1"));
+                img3.setTint(Color.parseColor("#F4AE9E"));
                 DayBut.setBackground(img1);
                 WeekBut.setBackground(img2);
                 MouthBut.setBackground(img3);

@@ -5,4 +5,11 @@
     <color name="mainBgColor">#FFFFFFFF</color>
     <color name="bottomBgColor">#ca9fd1</color>
     <color name="textColor">#343030</color>
+    <color name="purple">#E9E0FC</color>
+    <color name="blue">#DAE9FF</color>
+
+    <!-- default theme colors -->
+    <color name="notesButtonMain_Default">#FFDADA</color>
+
+
 </resources>

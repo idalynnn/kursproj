@@ -1,16 +1,38 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Kursproj" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Default" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/purple</item>
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
+
+        <item name="testcolor">@color/notesButtonMain_Default</item>
+        <item name="myBackgroundColor">@color/notesButtonMain_Default</item>
     </style>
 
-    <style name="Theme.Kursproj" parent="Base.Theme.Kursproj" />
 
-    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-        <item name="android:textColor">@color/textColor</item>
+
+    <style name="Theme.Purple" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/purple</item>
+        <!-- Customize your light theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="testcolor">@color/purple</item>
+        <item name="myBackgroundColor">@color/purple</item>
+    </style>
+
+
+
+    <style name="Theme.Blue" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/purple</item>
+
+
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="testcolor">@color/blue</item>
+        <item name="myBackgroundColor">@color/blue</item>
     </style>
 
 </resources>

@@ -53,12 +53,10 @@ public class AdapterDailyDay extends RecyclerView.Adapter<AdapterDailyDay.DailyV
         SpannableString spannableString = new SpannableString(ans);
         StrikethroughSpan strikethroughSpan = new StrikethroughSpan();
 
-
         if (!DailyOne.isChecked()) {
 
             holder.TextDayOutput.setText(DailyOne.getTextDay());
             holder.TimeDayOutput.setText(DailyOne.getDataDay());
-
 
         } else {
             holder.TimeDayOutput.setText("Завершено преждевременно");
